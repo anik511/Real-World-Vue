@@ -1,5 +1,3 @@
-# Simple Admin panel made with vue
-
 ## Project setup
 ```
 npm install
