@@ -1,10 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import store from './store/store'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
-import BaseIcon from '@/components/BaseIcon.vue'
+// import BaseIcon from '@/components/BaseIcon.vue'
+import 'nprogress/nprogress.css'
+import Vuelidate from 'vuelidate'
+import DateFilter from './filters/date'
+Vue.filter('date', DateFilter)
+
+Vue.use(Vuelidate)
 
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'

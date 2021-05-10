@@ -4,16 +4,18 @@
     :to="{ name: 'event-show', params: { id: event.id } }"
   >
     <div class="event-card -shadow">
-      <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
+      <span class="eyebrow">@{{ event.time }} on {{ event.date | date }}</span>
       <h4 class="title">{{ event.title }}</h4>
-      <BaseIcon> {{ event.attendees.length }} attending</BaseIcon>
+      <BaseIcon>
+        {{ event.attendees ? event.attendees.length : 0 }} attending</BaseIcon
+      >
     </div>
   </router-link>
 </template>
 
 <script>
 export default {
-  props: ["event"],
+  props: ['event'],
   data() {
     return {
       // event: {
@@ -26,9 +28,9 @@ export default {
       //     { id: "def456", name: "Gregg Pollack" },
       //   ],
       // },
-    };
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>
